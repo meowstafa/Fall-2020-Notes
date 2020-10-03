@@ -1,0 +1,208 @@
+
+\documentclass[12pt,a4paper]{report}
+\usepackage[width=16.00cm, height=24.00cm]{geometry}
+\author{Syed Mustafa Raza Rizvi}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{accents}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\input amssym.def
+\input amssym
+
+\usepackage{amsfonts}
+%% commands.tex%%
+\newsavebox{\gwbox}\newlength{\gwidth}
+\newcommand{\wrapminipage}[2][]{%
+	\sbox{\gwbox}{#2}%
+	\settowidth{\gwidth}{\usebox{\gwbox}}%
+	\begin{minipage}[#1]{\gwidth}\usebox\gwbox\end{minipage}}
+\newcommand{\gminipage}[2][]{%
+	\wrapminipage{\includegraphics[#1]{#2}}}
+\newcommand{\sminipage}[2][1]{%
+	\wrapminipage{\scalebox{#1}{#2}}}
+
+\newcommand{\bbmatrix}[1]{\begin{bmatrix}#1\end{bmatrix}} 
+\newcommand{\vecc}[1]{\overrightarrow{#1}}
+
+\usepackage{mathtools}
+\usepackage{dirtytalk}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{qtree}
+\definecolor{mycolor}{rgb}{0.122, 0.435, 0.698}
+\usepackage[framemethod=tikz]{mdframed}
+\newmdenv[innerlinewidth=0.5pt, roundcorner=4pt,linecolor=mycolor,innerleftmargin=6pt,
+innerrightmargin=6pt,innertopmargin=6pt,innerbottommargin=6pt]{mybox}
+
+\definecolor{dred}{rgb}{.4,0,0}
+\definecolor{dblue}{rgb}{0,0,.4}
+\definecolor{purple}{rgb}{.5,0,.8}
+\definecolor{mgreen}{rgb}{.1,.7,0}
+\definecolor{dgreen}{rgb}{0,.4,0}
+
+
+\newcommand{\dinta}[1]{\iint\limits_{D}{#1}\, dA}
+\newcommand{\tintv}[1]{\iiint\limits_{D}{#1}\, dV}
+
+\newcommand{\z}{{z = f(x,y)}}
+\newcommand{\vva}{\vec{a}}
+\newcommand{\vvx}{\vec{x}}
+\newcommand{\fxy}{{f(x,y)}}
+
+
+\newcommand{\A}{{\mathbb{A}}}
+\newcommand{\Z}{{\mathbb{Z}}}
+\newcommand{\Q}{{\mathbb{Q}}}
+\newcommand{\R}{{\mathbf{R}}}
+\newcommand{\Rn}{{\mathbf{R}^n}}
+\newcommand{\C}{{\mathbb{C}}}
+\newcommand{\N}{{\mathbf{N}}}
+\newcommand{\V}{{\mathbf{V}}}
+\newcommand{\U}{{\mathbf{U}}}
+\newcommand{\W}{{\mathbf{W}}}
+
+
+\newcommand{\go}{{$g:\R\to\R$ }}
+\newcommand{\ft}{{$f:\R^2\to\R$ }}
+\newcommand{\ftr}{{$f:\R^3\to\R$ }}
+\newcommand{\fn}{{$f:\R^n\to\R$ }}
+\newcommand{\vf}{{$p:\R\to\R^2$ }}
+
+
+\newcommand{\partials}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\partialsn}[3]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
+
+
+\newcommand{\wC}{{\textit{C}}}
+\newcommand{\n}{\vskip 6pt \noindent}
+\newcommand{\e}{\epsilon}
+\newcommand{\notdv}{\thinspace \not | \thickspace}
+\newcommand{\union}{\cup}
+\newcommand{\inter}{\cap}
+\newcommand{\into}{\to}
+\newcommand{\nset}[1]{#1_1,\ldots,#1_n}
+\newcommand{\setk}[2]{#1_1,\ldots,#1_#2}
+\newcommand{\bnset}[1]{\{#1_1,\ldots,#1_n\}}
+\newcommand{\bset}[2]{\{#1_1,\ldots,#1_#2\}}
+\newcommand{\st}{\thickspace |\thinspace}
+\newcommand{\ton}[1]{#1=1,\ldots,n}
+\newcommand{\tok}[2]{#1=1,\ldots,#2}
+\newcommand{\disc}{\operatorname{disc}}
+\newcommand{\spn}{\operatorname{spn}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\uzero}{\underline{0}}
+\newcommand{\ua}{\underline{a}}
+\newcommand{\ub}{\underline{b}}
+\newcommand{\va}{\underline{a}}
+\newcommand{\vb}{\underline{b}}
+\newcommand{\uc}{\underline{c}}
+\newcommand{\ud}{\underline{d}}
+\newcommand{\uh}{\underline{h}}
+\newcommand{\ui}{\underline{i}}
+\newcommand{\uj}{\underline{j}}
+\newcommand{\uk}{\underline{k}}
+\newcommand{\uu}{\underline{u}}
+\newcommand{\ux}{\underline{x}}
+\newcommand{\vx}{\underline{x}}
+\newcommand{\pfx}{\frac{\partial f}{\partial x}}
+\newcommand{\pfy}{\frac{\partial f}{\partial y}}
+\newcommand{\px}{\frac{\partial}{\partial x}}
+\newcommand{\pxn}[1]{\frac{\partial f}{\partial x_{#1}}}
+\newcommand{\py}{\frac{\partial}{\partial y}}
+\newcommand{\jacu}{\frac{\partial(u,v)}{\partial(x,y)}}
+\newcommand{\jacx}{\frac{\partial(x,y)}{\partial(u,v)}}
+% vectors in general vector spaces
+\newcommand{\bzero}{{\bf{0}}}
+\newcommand{\ba}{{\bf{a}}}
+\newcommand{\bb}{{\bf{b}}}
+\newcommand{\bc}{{\bf{c}}}
+\newcommand{\bd}{{\bf{d}}}
+\newcommand{\be}{{\bf{e}}}
+\newcommand{\bg}{{\bf{g}}}
+\newcommand{\bh}{{\bf{h}}}
+\newcommand{\bi}{{\bf{i}}}
+\newcommand{\bj}{{\bf{j}}}
+\newcommand{\bk}{{\bf{k}}}
+\newcommand{\bm}{{\bf{m}}}
+\newcommand{\bn}{{\bf{n}}}
+\newcommand{\bp}{{\bf{p}}}
+\newcommand{\bq}{{\bf{q}}}
+\newcommand{\br}{{\bf{r}}}
+\newcommand{\bt}{{\bf{t}}}
+\newcommand{\bs}{{\bf{s}}}
+\newcommand{\bu}{{\bf{u}}}
+\newcommand{\bv}{{\bf{v}}}
+\newcommand{\bw}{{\bf{w}}}
+\newcommand{\bx}{{\bf{x}}}
+\newcommand{\by}{{\bf{y}}}
+\newcommand{\bz}{{\bf z}}
+
+\usepackage{xcolor}
+\definecolor{thmblue}{RGB}{0, 0, 102}
+\definecolor{defnblue}{RGB}{0, 0, 200}
+\definecolor{corblue}{RGB}{80, 00, 105}
+
+\newcommand{\lec}[1]{\vskip15pt\noindent\underline{\bf Lecture #1 :}\vskip10pt}
+\newcommand{\con}{\noindent\underline{Content:} \hskip5pt}
+\newcommand{\prob}{\vskip10pt\noindent\underline{Problem:} \hskip5pt}
+\newcommand\marginlabel[1]{\mbox{}\marginpar{\raggedright\hspace{0pt}#1}}
+
+
+%\newcommand{\defn}[2]{\vskip10pt\marginlabel{\centering{\large \textcolor{defnblue}{Definition}}\\{\small {\textcolor{black}{#1}}}}\hskip-18pt \textcolor{defnblue}{#2}}
+
+\newcommand{\defn}{\vskip10pt\noindent\textbf{\large Definition. }}
+\newcommand{\ax}{\vskip10pt\noindent\textbf{\large Axiom. }}
+\newcommand{\thm}{\vskip10pt\noindent\textbf{\large Theorem. }}
+\newcommand{\cor}{\vskip10pt\noindent\textbf{\large Corollary. }}
+\newcommand{\prop}{\vskip10pt\noindent\textbf{\large Proposition. }}
+\newcommand{\mt}{\emptyset}
+\newcommand{\subeq}{\subseteq}
+\newcommand{\sub}{\subset}
+
+\newcommand{\alg}[2]{\vskip10pt\marginlabel{\centering{\large \textcolor{blue}{Algorithm}}\\{\small {\textcolor{black}{#1}}}}\hskip-18pt \textcolor{blue}{#2}}
+\newcommand{\nota}[1]{\vskip10pt\textcolor{blue}{\marginlabel{\centering{\large Notation}}\hskip-18pt #1}}
+%\newcommand{\thm}[2]{\vskip10pt\marginlabel{\centering{\large \textcolor{thmblue}{Theorem #1}}}\hskip-18pt \textcolor{thmblue}{#2}}
+\newcommand{\theorem}[2]{\vskip10pt\marginlabel{\centering{\large \textcolor{thmblue}{#1}}}\hskip-18pt \textcolor{thmblue}{#2}}
+%\newcommand{\cor}[2]{\vskip10pt\marginlabel{\centering{\large \textcolor{corblue}{Corollary #1}}}\hskip-18pt \textcolor{corblue}{#2}}
+\newcommand{\lem}[2]{\vskip10pt\marginlabel{\centering{\large \textcolor{blue}{Lemma #1}}}\hskip-18pt #2}
+\newcommand{\ex}[1]{\vskip10pt{\marginlabel{\centering{\textcolor{mygreen}{EXAMPLE \hskip7pt #1}}}\hskip-18pt}}
+\newcommand{\xr}[1]{\vskip10pt\marginlabel{\centering{\textcolor{red}{EXERCISE\hskip7pt #1}}}\hskip-18pt}
+\newcommand{\sect}[2]{{\sectionmark{#2}\marginlabel{\centering{Section}\\{\large \textcolor{blue}{#1}}} \vskip1pt\noindent\textcolor{blue}{\Large #2}}}
+\newcommand{\rema}{\vskip10pt\noindent{REMARK}\vskip10pt}
+\newcommand{\remas}{\vskip10pt\noindent{REMARKS}\vskip5pt}
+\newcommand{\proofb}{\vskip10pt\noindent{\bf Proof:}\hskip7pt}
+\newcommand{\soln}{\vskip10pt\noindent\textcolor{mygreen}{\bf Solution: }}
+\newcommand{\hl}{\vskip5pt{{\color{blue}\noindent\hrulefill} }}
+\newcommand{\nihl}{\vskip-5pt{{\color{blue}\noindent\hrulefill} }}
+
+\usepackage{hyperref}
+
+\renewcommand{\baselinestretch}{1.30} 
+
+
+\newcommand{\items}[1]{\begin{itemize}\setlength{\itemsep}{-4pt} #1\end{itemize}}
+\renewcommand{\baselinestretch}{1.30} 
+\newcommand{\enums}[1]{\begin{enumerate}\setlength{\itemsep}{-4pt} #1\end{enumerate}}
+
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+
+
+
+\begin{document}
+	\title{PMATH 333: Introduction to Real Analysis}
+	\date{September 8, 2020}
+	\maketitle
+	\pagenumbering{roman}
+	\tableofcontents
+
+\include{pmath333chap1}
+\include{pmath333chap2}
+%\include{pmath333chap3}
+
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendix}
+\end{document}
